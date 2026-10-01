@@ -108,7 +108,7 @@ strong { font-weight: 700; }
 /* 01/10: no celular o CTA do WhatsApp fica no lugar do menu (Armin); sem menu e sem botão flutuante */
 @media (max-width: 899px) { .cabecalho__cta { flex-shrink: 0; padding-inline: var(--space-5); } }
 @media (max-width: 479px) { .cabecalho__cta-resto { display: none; } }
-@media (max-width: 359px) { .cabecalho__cta { padding-inline: var(--space-4); } }
+.marca__nome { white-space: nowrap; }
 .marca { display: inline-flex; flex-direction: column; text-decoration: none; line-height: 1; min-width: 0; }
 .marca__nome { font-size: 1.875rem; line-height: 1.05; color: var(--tinta); }
 .marca__prof { font-family: var(--fonte-titulo); font-size: 1.25rem; align-self: flex-end; margin-top: var(--space-1); color: var(--vinho); }
@@ -116,7 +116,13 @@ strong { font-weight: 700; }
   flex-shrink: 0; display: grid; place-items: center; width: 48px; height: 48px;
   border: 1px solid var(--linha); border-radius: 50%; background: transparent; color: var(--tinta);
 }
-@media (max-width: 399px) { .marca__nome { font-size: 1.625rem; } }
+@media (min-width: 360px) and (max-width: 399px) { .marca__nome { font-size: 1.625rem; } }
+@media (max-width: 359px) {
+  .cabecalho__grade { gap: var(--space-3); }
+  .cabecalho__cta { padding-inline: var(--space-4); }
+  .marca__nome { font-size: 1.375rem; }
+  .marca__prof { font-size: 1.125rem; }
+}
 @media (min-width: 900px) {
   .cabecalho__grade { display: grid; grid-template-columns: auto 1fr auto; gap: var(--space-6); padding-block: var(--space-5); }
   .cabecalho__nav { display: block; justify-self: center; }
