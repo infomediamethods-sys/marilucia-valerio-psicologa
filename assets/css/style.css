@@ -114,7 +114,7 @@ strong { font-weight: 700; }
 .marca__nome { white-space: nowrap; }
 .marca { display: inline-flex; flex-direction: column; text-decoration: none; line-height: 1; min-width: 0; }
 .marca__nome { font-size: 1.875rem; line-height: 1.05; color: var(--tinta); }
-.marca__prof { font-family: var(--fonte-titulo); font-size: 1.25rem; align-self: flex-end; margin-top: var(--space-1); color: var(--vinho); }
+.marca__prof { font-family: var(--fonte-titulo); font-size: 1.25rem; align-self: flex-start; white-space: nowrap; margin-top: var(--space-1); color: var(--vinho); }
 .cabecalho__menu {
   flex-shrink: 0; display: grid; place-items: center; width: 48px; height: 48px;
   border: 1px solid var(--linha); border-radius: 50%; background: transparent; color: var(--tinta);
