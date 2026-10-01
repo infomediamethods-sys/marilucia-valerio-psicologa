@@ -4,6 +4,7 @@
   --linho: #F4F0EE;
   --areia: #C9AD93;
   --cafe: #5A4232;                 /* fundo do Como funciona: linho 8,2:1, areia 4,4:1 */
+  --areia-clara: #E6C9A8;           /* rótulo do herói sobre o véu café: 4,5:1 no ponto mais claro */
   --veu-heroi: rgba(62, 42, 30, 0.8); /* café sobre o papel do herói: linho ≥ 6,3:1 no ponto mais claro */
   --vinho: #431717;
   --tinta: #252020;
@@ -105,9 +106,11 @@ strong { font-weight: 700; }
   width: min(100% - 2 * var(--gutter), 1320px); margin-inline: auto; padding-block: var(--space-4);
 }
 .cabecalho__nav { display: none; }
-/* 01/10: no celular o CTA do WhatsApp fica no lugar do menu (Armin); sem menu e sem botão flutuante */
-@media (max-width: 899px) { .cabecalho__cta { flex-shrink: 0; padding-inline: var(--space-5); } }
-@media (max-width: 479px) { .cabecalho__cta-resto { display: none; } }
+/* 01/10: CTA do cabeçalho compacto, "Chamar no WhatsApp" (Armin); no celular fica no lugar do menu, sem botão flutuante */
+.cabecalho__cta {
+  flex-shrink: 0; white-space: nowrap; min-height: var(--toque-min); padding: var(--space-2) var(--space-4);
+  font-size: 0.75rem; letter-spacing: 0.02em; gap: var(--space-2);
+}
 .marca__nome { white-space: nowrap; }
 .marca { display: inline-flex; flex-direction: column; text-decoration: none; line-height: 1; min-width: 0; }
 .marca__nome { font-size: 1.875rem; line-height: 1.05; color: var(--tinta); }
@@ -116,12 +119,13 @@ strong { font-weight: 700; }
   flex-shrink: 0; display: grid; place-items: center; width: 48px; height: 48px;
   border: 1px solid var(--linha); border-radius: 50%; background: transparent; color: var(--tinta);
 }
-@media (min-width: 360px) and (max-width: 399px) { .marca__nome { font-size: 1.625rem; } }
-@media (max-width: 359px) {
-  .cabecalho__grade { gap: var(--space-3); }
-  .cabecalho__cta { padding-inline: var(--space-4); }
-  .marca__nome { font-size: 1.375rem; }
-  .marca__prof { font-size: 1.125rem; }
+@media (max-width: 599px) { .marca__nome { font-size: 1.5rem; } .marca__prof { font-size: 1.125rem; } }
+@media (max-width: 374px) { .cabecalho__grade { gap: var(--space-3); } .cabecalho__cta .icone { display: none; } }
+@media (max-width: 339px) {
+  .cabecalho__grade { gap: var(--space-2); }
+  .cabecalho__cta { padding-inline: var(--space-3); }
+  .marca__nome { font-size: 1.25rem; }
+  .marca__prof { font-size: 1rem; }
 }
 @media (min-width: 900px) {
   .cabecalho__grade { display: grid; grid-template-columns: auto 1fr auto; gap: var(--space-6); padding-block: var(--space-5); }
@@ -134,7 +138,7 @@ strong { font-weight: 700; }
   }
   .cabecalho__nav a:hover { text-decoration: underline; text-underline-offset: 6px; }
   .marca__nome { font-size: 1.875rem; }
-  .cabecalho__cta { display: inline-flex; justify-self: end; white-space: nowrap; }
+  .cabecalho__cta { display: inline-flex; justify-self: end; font-size: 0.875rem; padding: var(--space-3) var(--space-5); }
   .cabecalho__menu { display: none; }
 }
 @media (min-width: 900px) and (max-width: 1199px) {
@@ -172,7 +176,7 @@ strong { font-weight: 700; }
   background-image: linear-gradient(var(--veu-heroi), var(--veu-heroi)), image-set(url("../img/heroi-papel-mobile.webp") type("image/webp"), url("../img/heroi-papel-mobile.jpg") type("image/jpeg"));
   color: var(--sobre-escuro); --focus-ring: var(--sobre-escuro);
 }
-.heroi .rotulo { color: var(--sobre-escuro); }
+.heroi .rotulo { color: var(--areia-clara); font-size: 0.75rem; letter-spacing: 0.2em; }
 .heroi__grade { display: grid; gap: var(--space-6); }
 .heroi__lead { margin-bottom: var(--space-6); }
 .heroi__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4) var(--space-6); margin-bottom: var(--space-5); }
