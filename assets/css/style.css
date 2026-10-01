@@ -97,7 +97,8 @@ strong { font-weight: 700; }
   position: fixed; inset: 0 0 auto 0; z-index: 80;
   transition: background-color var(--dur-base) ease, box-shadow var(--dur-base) ease;
 }
-.cabecalho[data-rolado] { background: rgba(244, 240, 238, 0.96); box-shadow: 0 1px 0 var(--linha); }
+/* 01/10: barra sempre visível (antes só depois de rolar), para a marca não sumir no papel do herói */
+.cabecalho { background: rgba(244, 240, 238, 0.96); box-shadow: 0 1px 0 var(--linha); }
 .cabecalho__grade {
   display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
   width: min(100% - 2 * var(--gutter), 1320px); margin-inline: auto; padding-block: var(--space-4);
