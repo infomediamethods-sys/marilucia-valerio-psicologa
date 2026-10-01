@@ -4,6 +4,7 @@
   --linho: #F4F0EE;
   --areia: #C9AD93;
   --cafe: #5A4232;                 /* fundo do Como funciona: linho 8,2:1, areia 4,4:1 */
+  --veu-heroi: rgba(62, 42, 30, 0.8); /* café sobre o papel do herói: linho ≥ 6,3:1 no ponto mais claro */
   --vinho: #431717;
   --tinta: #252020;
   --acento: #204C43;
@@ -157,9 +158,11 @@ strong { font-weight: 700; }
 .heroi {
   position: relative;
   padding-top: calc(var(--header-h) + var(--space-6)); padding-bottom: var(--space-8);
-  background: var(--linho) url("../img/heroi-papel-mobile.jpg") right center / cover no-repeat;
-  background-image: image-set(url("../img/heroi-papel-mobile.webp") type("image/webp"), url("../img/heroi-papel-mobile.jpg") type("image/jpeg"));
+  background: var(--cafe) url("../img/heroi-papel-mobile.jpg") right center / cover no-repeat;
+  background-image: linear-gradient(var(--veu-heroi), var(--veu-heroi)), image-set(url("../img/heroi-papel-mobile.webp") type("image/webp"), url("../img/heroi-papel-mobile.jpg") type("image/jpeg"));
+  color: var(--sobre-escuro); --focus-ring: var(--sobre-escuro);
 }
+.heroi .rotulo { color: var(--sobre-escuro); }
 .heroi__grade { display: grid; gap: var(--space-6); }
 .heroi__lead { margin-bottom: var(--space-6); }
 .heroi__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4) var(--space-6); margin-bottom: var(--space-5); }
@@ -182,7 +185,7 @@ strong { font-weight: 700; }
 @media (min-width: 900px) {
   .heroi {
     padding-top: calc(var(--header-h) + var(--space-8)); padding-bottom: var(--space-9);
-    background-image: image-set(url("../img/heroi-papel.webp") type("image/webp"), url("../img/heroi-papel.jpg") type("image/jpeg"));
+    background-image: linear-gradient(var(--veu-heroi), var(--veu-heroi)), image-set(url("../img/heroi-papel.webp") type("image/webp"), url("../img/heroi-papel.jpg") type("image/jpeg"));
   }
   .heroi__grade {
     grid-template-columns: 7fr 5fr; grid-template-areas: "topo colagem" "base colagem";
