@@ -357,7 +357,7 @@ strong { font-weight: 700; }
 .quando__lista .icone { width: var(--icone-card); height: var(--icone-card); }
 .quando__lista p { line-height: 1.6; }
 @media (min-width: 600px) and (max-width: 899px) {
-  .quando__lista { grid-template-columns: 1fr 1fr; gap: var(--space-6) var(--space-5); }
+  .quando__lista { max-width: var(--midia-tablet); margin-inline: auto; }
 }
 @media (min-width: 900px) {
   .quando__lista { grid-template-columns: repeat(3, 1fr); gap: var(--space-7) var(--space-6); }
